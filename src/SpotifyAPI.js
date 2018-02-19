@@ -1,4 +1,3 @@
-
 var request = require('request'); // "Request" library
 var querystring = require('querystring');
 
@@ -61,32 +60,3 @@ export const search = (query)=>{
  
 
         }
-
-
-/*
-
-const url = 'https://api.spotify.com/v1/search?q=Muse&type=album,artist,track,playlist&market=US';
-const token = "BQD6tzRGwk0L_rn4Aep-5OAHEI177rRmhGCrQNE9BvWxwFo6Li4QB4A1goKgclVelmEivTodqJzK-A9Q3Oc3Ieh76nDshqK6nfsM4WPZE2wF0uhMmUV_JTP4qRmtgyqHmWNL-cRDKUYe"
-const headerstoken = {
-       'Accept': 'application/json',
-       'Authorization':"Bearer "+token
-     }
-fetchdata={
-method:'GET',
-headers:headerstoken
-
-}
-fetch(url,fetchdata)
-.then((resp) => resp.json())
-.then(function(data) {
-let authors = data;
-console.log(data)
-
-
-})
-.catch(function(error) {
-console.log(error);
-});
-
-
-*/

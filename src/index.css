@@ -3,3 +3,13 @@ body {
   padding-top: 3.5rem;
   font-family: sans-serif;
 }
+
+.navbar{
+ color: #e3f2fd
+}
+.btn-outline-success{
+color: #58b567
+}
+a{
+  color: #0072ee
+}

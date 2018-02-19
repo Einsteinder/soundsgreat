@@ -11,12 +11,16 @@ class SearchResult extends React.Component {
                 {(musics) && musics.map((music) => (
                     <div className="col-md-4" key={music.id}>
                         <img src={music.album.images[0].url} alt={music.id} width="300" height="300" />
-                        <video controls width="300" height="30">
+                        <label htmlFor={music.id}>
+                        {music.name}
+                        </label>
+                        <video controls width="300" height="30" id={music.id}>
                             <source src={music.preview_url} type="video/mp4" />
                         </video>
                         <h2>{music.name}</h2>
-                        <p>{music.album.name}</p>
-                        <p>{music.album.artists[0].name}</p>
+                        <p>Popularity:{music.popularity}</p>
+                        <p>Album: <a href={music.album.external_urls.spotify}>{music.album.name}</a></p>
+                        <p>Artist: <a href={music.album.artists[0].external_urls.spotify}>{music.album.artists[0].name}</a></p>
                     </div>
 
 
