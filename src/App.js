@@ -1,21 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import SearchMusic from './SearchMusic';
+import SearchResultContainer from './SearchResultContainer';
+
 
 class App extends Component {
+  state = {
+    songs:''
+  }
+
+  onSearch = (searchQuery) => {
+    this.setState({
+      songs: searchQuery
+    });
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <SearchMusic/>
+      <div className="App" >
+        <SearchMusic onSearch={this.onSearch} />
+        <SearchResultContainer query={this.state.songs} />
+
+      
       </div>
+          
+   
       
     );
   }
