@@ -11,9 +11,7 @@ class SearchResult extends React.Component {
                 {(musics) && musics.map((music) => (
                     <div className="col-md-4" key={music.id}>
                         <img src={music.album.images[0].url} alt={music.id} width="300" height="300" />
-                        <label htmlFor={music.id}>
-                        {music.name}
-                        </label>
+                        <label htmlFor={music.id}></label>
                         <video controls width="300" height="30" id={music.id}>
                             <source src={music.preview_url} type="video/mp4" />
                         </video>
@@ -25,7 +23,7 @@ class SearchResult extends React.Component {
 
 
                 ))}
-
+                {(!musics.length)&&<p>Sorry, we cannot find anything about {this.props.searchkey}</p>}
             </div>
         </div>
 

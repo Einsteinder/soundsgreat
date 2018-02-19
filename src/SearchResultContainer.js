@@ -29,7 +29,7 @@ render() {
     }
     const songs = this.state.result
 
-    return <SearchResult query={songs}/>
+    return <SearchResult query={songs} searchkey={this.props.query}/>
 }
 
 }
